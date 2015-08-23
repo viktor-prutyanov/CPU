@@ -1,0 +1,139 @@
+module core
+(
+    input CLK,
+
+    output reg [31:0]OUT,
+    input [31:0]IN,
+
+    input [15:0]RAM_Q,
+    output reg [11:0]RAM_ADDR,
+    output reg RAM_WREN,
+    output reg [15:0]RAM_DATA,
+
+    input FLASH_NEW_DATA1,
+    input [15:0]FLASH_DATA1,
+    input FLASH_IDLE,
+
+    output [8:0]STATE;
+    output reg END
+);
+
+initial RAM_WREN = 1'b0;
+initial END = 1'b0;
+
+assign STATE = cpu_state;
+
+reg [11:0]ip = 12'b0; //Instruction pointer 
+reg [10:0]sp = 11'b0; //Stack pointer
+reg [31:0]registers[7:0]; 
+
+(*keep*)reg [8:0]cpu_state = 9'b1_00000_000;
+reg[6:0]load_cnt = 7'b0;
+// reg [26:0]cnt = 27'b1;
+always @(posedge CLK) begin
+    case (cpu_state)
+        9'b1_00000_000: begin
+            RAM_WREN = 1'b0;
+            if (FLASH_NEW_DATA1) begin
+                RAM_DATA = FLASH_DATA1;
+                RAM_ADDR[6:0] = load_cnt;
+                load_cnt = load_cnt + 7'b1;
+                if (load_cnt == 7'b0) begin
+                    cpu_state <= 9'b1_00000_001;
+                end
+                RAM_WREN = 1'b1;
+            end
+            ip = 12'b0;
+        end
+        // 9'b1_00000_001: begin
+        //     RAM_WREN = 1'b0;
+        //     RAM_ADDR = ip;
+        //     OUT[11:0] = ip;
+        //     OUT[31:16] = RAM_Q;
+        //     cnt = cnt + 1;
+        //     if (cnt == 27'b0) begin
+        //         ip = ip + 1;
+        //     end
+        // end
+        9'b1_00000_001: begin
+            RAM_WREN = 1'b0;
+            RAM_ADDR = 12'b0;//ip;
+            cpu_state <= 9'b1_00000_010;
+        end
+        9'b1_00000_010: begin
+            cpu_state <= 9'b1_00000_011;
+        end
+        9'b1_00000_011: begin
+            case (RAM_Q[15])
+                1'b0: begin
+                    case (RAM_Q[14:11]) 
+                        4'b0000: begin
+                            case (RAM_Q[4:0])
+                                5'b00000: begin //END
+                                    cpu_state <= 9'b0_00000_000;
+                                end
+                                5'b01101: begin //OUT
+                                    OUT <= registers[RAM_Q[10:8]];
+                                end 
+                            endcase
+                            end
+                        4'b0100: begin //MOV0
+                            registers[RAM_Q[10:8]][7:0] <= RAM_Q[7:0];
+                        end
+                        4'b0101: begin //MOV1
+                            registers[RAM_Q[10:8]][15:8] <= RAM_Q[7:0];
+                        end
+                        4'b0110: begin //MOV2
+                            registers[RAM_Q[10:8]][23:16] <= RAM_Q[7:0];
+                        end
+                        4'b0111: begin //MOV3
+                            registers[RAM_Q[10:8]][31:24] <= RAM_Q[7:0];
+                        end
+                        4'b1000: begin //ADDB
+                            // reg_n1 <= {1'b1, RAM_Q[10:8]};
+                            // reg_n2 <= 4'b0000;
+                            // alu_mode = 3'b000;
+                            // registers[RAM_Q[10:8]][31:0] <= alu_ans;
+                            registers[RAM_Q[10:8]][31:0] <= registers[RAM_Q[10:8]][31:0] + {24'b0, RAM_Q[7:0]};
+                        end
+                        4'b1001: begin //SUBB
+                            registers[RAM_Q[10:8]][31:0] <= registers[RAM_Q[10:8]][31:0] - {24'b0, RAM_Q[7:0]};
+                        end
+                        4'b1010: begin //MULB
+                            registers[RAM_Q[10:8]][31:0] <= registers[RAM_Q[10:8]][31:0] * {24'b0, RAM_Q[7:0]};
+                        end
+                        4'b1011: begin
+                            case (RAM_Q[7:5])
+                                3'b000: begin //SHL      
+                                    registers[RAM_Q[10:8]][31:0] <= registers[RAM_Q[10:8]][31:0] << RAM_Q[7:0];
+                                end
+                                3'b001: begin //SHR
+                                    registers[RAM_Q[10:8]][31:0] <= registers[RAM_Q[10:8]][31:0] >> RAM_Q[7:0];
+                                end    
+                                3'b010: begin
+                                    
+                                end   
+                                3'b011: begin
+                                    
+                                end   
+                            endcase
+                        end
+                    endcase
+                    ip = ip + 12'b1;
+                    RAM_ADDR = ip;
+                    if (RAM_Q != 16'b0) begin
+                        cpu_state <= 9'b1_00000_011;
+                    end
+                end
+                1'b1: begin
+
+                end
+            endcase
+        end
+/*END*/ 9'b0_00000_000: begin
+            END <= 1'b1;
+        end
+    endcase
+end
+
+endmodule

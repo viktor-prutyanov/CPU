@@ -1,0 +1,26 @@
+module alu
+(
+    output [31:0]ANS,
+    input [31:0]ARG1,
+    input [31:0]ARG2,
+    input [1:0]MODE
+);
+
+always @(*) begin
+    case (MODE)
+        2'b00: begin //Addition
+            ANS <= ARG1 + ARG2;   
+        end
+        2'b01: begin //Substraction
+            ANS <= ARG1 - ARG2;
+        end
+        2'b10: begin //Multiplication
+            ANS <= ARG1 * ARG2;
+        end
+        2'b11: begin //Shifting
+            ANS <= ARG1 << ARG2
+        end
+    endcase
+end
+
+endmodule

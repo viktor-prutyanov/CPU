@@ -1,0 +1,27 @@
+﻿  main.cpp
+c:\users\vvvv32vvvv\fpga\cpu\c\assembler\assembler\TokenArray.h(200): warning C4129: %: неизвестная escape-последовательность
+c:\users\vvvv32vvvv\fpga\cpu\c\assembler\assembler\TokenArray.h(390): warning C4267: =: преобразование из "size_t" в "uint8_t"; возможна потеря данных
+main.cpp(20): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(211): см. объявление "fopen"
+main.cpp(35): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(211): см. объявление "fopen"
+main.cpp(45): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(211): см. объявление "fopen"
+main.cpp(58): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
+C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\utility(144): warning C4267: инициализация: преобразование из "size_t" в "uint16_t"; возможна потеря данных
+          c:\users\vvvv32vvvv\fpga\cpu\c\assembler\assembler\TokenArray.h(232): см. ссылку на создание экземпляров функции шаблон при компиляции "std::pair<Token *,uint16_t>::pair<Token*&,size_t,void>(_Other1,_Other2 &&)"
+          with
+          [
+              _Other1=Token *&
+  ,            _Other2=size_t
+          ]
+          c:\users\vvvv32vvvv\fpga\cpu\c\assembler\assembler\TokenArray.h(232): см. ссылку на создание экземпляров функции шаблон при компиляции "std::pair<Token *,uint16_t>::pair<Token*&,size_t,void>(_Other1,_Other2 &&)"
+          with
+          [
+              _Other1=Token *&
+  ,            _Other2=size_t
+          ]
+  Создание кода
+c:\users\vvvv32vvvv\fpga\cpu\c\assembler\assembler\tokenarray.h(163): warning C4715: TokenArray::ResolveLabels: значение возвращается не при всех путях выполнения
+  Создание кода завершено
+  Assembler.vcxproj -> C:\Users\vvvv32vvvv\FPGA\cpu\c\Assembler\x64\Release\Assembler.exe

@@ -1,0 +1,19 @@
+module regfile
+(
+    input [2:0]RA0,
+    input [2:0]RA1,
+    input [2:0]WA,
+    output reg [31:0]OUT0,
+    output reg [31:0]OUT1,
+    input [31:0]IN,
+    input WE
+);
+
+reg [31:0]registers[7:0]; 
+
+assign OUT0 = registers[RA0];
+assign OUT1 = registers[RA1];
+
+always @(negedge CLK) begin
+    if (WE) registers[WA] <= IN;
+end

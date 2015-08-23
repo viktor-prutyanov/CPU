@@ -1,0 +1,14 @@
+
+State Machine - |top|code_mem_io:code_mem_io1|uart_tx:uart1_tx|bit_num
+Name bit_num.1010 bit_num.1001 bit_num.1000 bit_num.0111 bit_num.0110 bit_num.0101 bit_num.0100 bit_num.0011 bit_num.0010 bit_num.0001 bit_num.0000 
+bit_num.0000 0 0 0 0 0 0 0 0 0 0 0 
+bit_num.0001 0 0 0 0 0 0 0 0 0 1 1 
+bit_num.0010 0 0 0 0 0 0 0 0 1 0 1 
+bit_num.0011 0 0 0 0 0 0 0 1 0 0 1 
+bit_num.0100 0 0 0 0 0 0 1 0 0 0 1 
+bit_num.0101 0 0 0 0 0 1 0 0 0 0 1 
+bit_num.0110 0 0 0 0 1 0 0 0 0 0 1 
+bit_num.0111 0 0 0 1 0 0 0 0 0 0 1 
+bit_num.1000 0 0 1 0 0 0 0 0 0 0 1 
+bit_num.1001 0 1 0 0 0 0 0 0 0 0 1 
+bit_num.1010 1 0 0 0 0 0 0 0 0 0 1 
