@@ -1,0 +1,11 @@
+*.sdf
+*.vcxproj
+*.vcxproj.*
+*.sln
+*.suo
+*.opensdf
+*.ini
+Debug
+Release
+*.bin
+*.hex
