@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{16C09368-8385-4BDF-B1CC-F6D3600FEBF5}</ProjectGuid>
+    <ProjectGuid>{09E81F96-4D80-401D-A0CC-131A80F639D0}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>vpvm_prog</RootNamespace>
-    <AssemblyName>vpvm_prog</AssemblyName>
+    <RootNamespace>uart_prog</RootNamespace>
+    <AssemblyName>uart_prog</AssemblyName>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

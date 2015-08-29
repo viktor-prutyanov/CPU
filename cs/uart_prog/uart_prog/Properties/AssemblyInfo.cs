@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // Управление общими сведениями о сборке осуществляется с помощью 
 // набора атрибутов. Измените значения этих атрибутов, чтобы изменить сведения,
 // связанные со сборкой.
-[assembly: AssemblyTitle("vpvm_prog")]
+[assembly: AssemblyTitle("uart_prog")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("vpvm_prog")]
+[assembly: AssemblyProduct("uart_prog")]
 [assembly: AssemblyCopyright("Copyright ©  2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // Следующий GUID служит для идентификации библиотеки типов, если этот проект будет видимым для COM
-[assembly: Guid("f1aa15f2-332b-470b-96b1-c2f72350fb56")]
+[assembly: Guid("a505687e-54cb-4b5a-8045-1c4fa47d9c60")]
 
 // Сведения о версии сборки состоят из следующих четырех значений:
 //

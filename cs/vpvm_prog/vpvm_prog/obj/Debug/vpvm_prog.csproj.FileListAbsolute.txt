@@ -1,5 +1,0 @@
-C:\Users\vvvv32vvvv\FPGA\vpvm\vpvm_prog\cs\vpvm_prog\vpvm_prog\bin\Debug\vpvm_prog.exe
-C:\Users\vvvv32vvvv\FPGA\vpvm\vpvm_prog\cs\vpvm_prog\vpvm_prog\bin\Debug\vpvm_prog.pdb
-C:\Users\vvvv32vvvv\FPGA\vpvm\vpvm_prog\cs\vpvm_prog\vpvm_prog\obj\Debug\vpvm_prog.csprojResolveAssemblyReference.cache
-C:\Users\vvvv32vvvv\FPGA\vpvm\vpvm_prog\cs\vpvm_prog\vpvm_prog\obj\Debug\vpvm_prog.exe
-C:\Users\vvvv32vvvv\FPGA\vpvm\vpvm_prog\cs\vpvm_prog\vpvm_prog\obj\Debug\vpvm_prog.pdb
