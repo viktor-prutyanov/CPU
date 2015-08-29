@@ -5,7 +5,7 @@
 *.suo
 *.opensdf
 *.ini
-Debug
-Release
 *.bin
 *.hex
+Debug
+Release
