@@ -1,6 +1,6 @@
 .vect 000
 .vect 000 ;_i_timer_ovf
-.vect _i_timer_comp
+.vect _i_timer_comp ;label address immediately writes to top of memory by 'vect'
 .vect 000
 .vect 000
 .vect 000
@@ -15,15 +15,15 @@
     clr $a
     clr $c
 
-;timer configurartion
-    movd    $a 02DC6C00 ;48000000 
-    stsprd  $a %tcmp
-    clr     $a
-    stsprd  $a %tcnt
+;timer configuration
+    movd    $a 02DC6C00 ;48000000 tics (frecuency = 48MHz)
+    stsprd  $a %tcmp ;stsprd means STore Special Purpose Register
+    clr     $a ;tcmp - compare regiser
+    stsprd  $a %tcnt ; - counter
     movll   $a 1
-    stsprd  $a %tctr
+    stsprd  $a %tctr ; - control register
     movll   $a 4
-    stsprd  $a %ienb
+    stsprd  $a %ienb ; - interrupts enable mask
 
 ;infinity loop
 :main_loop
@@ -32,7 +32,7 @@
 
 ;timer comparsion interrupt
 :i_timer_comp
-    rol     $f 10
+    rol     $f 10 ; - rotate left (12! needs 8 hex digits, but indicator only has 4)
     clr     $a
     stsprd  $a %tcnt
     iret
