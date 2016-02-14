@@ -1,5 +1,5 @@
 Analysis & Synthesis report for top
-Sun Feb 14 19:30:45 2016
+Sun Feb 14 19:37:48 2016
 Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 SJ Web Edition
 
 
@@ -63,13 +63,13 @@ agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Feb 14 19:30:45 2016      ;
+; Analysis & Synthesis Status        ; Successful - Sun Feb 14 19:37:48 2016      ;
 ; Quartus II 64-Bit Version          ; 15.0.0 Build 145 04/22/2015 SJ Web Edition ;
 ; Revision Name                      ; top                                        ;
 ; Top-level Entity Name              ; top                                        ;
 ; Family                             ; Cyclone IV E                               ;
-; Total logic elements               ; 2,805                                      ;
-;     Total combinational functions  ; 2,468                                      ;
+; Total logic elements               ; 2,798                                      ;
+;     Total combinational functions  ; 2,461                                      ;
 ;     Dedicated logic registers      ; 537                                        ;
 ; Total registers                    ; 537                                        ;
 ; Total pins                         ; 34                                         ;
@@ -227,16 +227,16 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 2,805     ;
+; Estimated Total logic elements              ; 2,798     ;
 ;                                             ;           ;
-; Total combinational functions               ; 2468      ;
+; Total combinational functions               ; 2461      ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 1470      ;
-;     -- 3 input functions                    ; 717       ;
+;     -- 4 input functions                    ; 1461      ;
+;     -- 3 input functions                    ; 719       ;
 ;     -- <=2 input functions                  ; 281       ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 2223      ;
+;     -- normal mode                          ; 2216      ;
 ;     -- arithmetic mode                      ; 245       ;
 ;                                             ;           ;
 ; Total registers                             ; 537       ;
@@ -253,7 +253,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;                                             ;           ;
 ; Maximum fan-out node                        ; CLK~input ;
 ; Maximum fan-out                             ; 533       ;
-; Total fan-out                               ; 11025     ;
+; Total fan-out                               ; 10995     ;
 ; Average fan-out                             ; 3.54      ;
 +---------------------------------------------+-----------+
 
@@ -263,21 +263,21 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                   ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                             ; Library Name ;
 +----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------+--------------+
-; |top                                         ; 2468 (1)          ; 537 (0)      ; 73728       ; 6            ; 0       ; 3         ; 34   ; 0            ; |top                                                                                                            ; work         ;
-;    |core:core_inst|                          ; 2270 (1125)       ; 471 (215)    ; 0           ; 6            ; 0       ; 3         ; 0    ; 0            ; |top|core:core_inst                                                                                             ; work         ;
+; |top                                         ; 2461 (1)          ; 537 (0)      ; 73728       ; 6            ; 0       ; 3         ; 34   ; 0            ; |top                                                                                                            ; work         ;
+;    |core:core_inst|                          ; 2264 (1119)       ; 471 (215)    ; 0           ; 6            ; 0       ; 3         ; 0    ; 0            ; |top|core:core_inst                                                                                             ; work         ;
 ;       |alu:alu_inst|                         ; 837 (809)         ; 0 (0)        ; 0           ; 6            ; 0       ; 3         ; 0    ; 0            ; |top|core:core_inst|alu:alu_inst                                                                                ; work         ;
 ;          |mult:mult_inst|                    ; 28 (0)            ; 0 (0)        ; 0           ; 6            ; 0       ; 3         ; 0    ; 0            ; |top|core:core_inst|alu:alu_inst|mult:mult_inst                                                                 ; work         ;
 ;             |lpm_mult:lpm_mult_component|    ; 28 (0)            ; 0 (0)        ; 0           ; 6            ; 0       ; 3         ; 0    ; 0            ; |top|core:core_inst|alu:alu_inst|mult:mult_inst|lpm_mult:lpm_mult_component                                     ; work         ;
 ;                |mult_m8n:auto_generated|     ; 28 (28)           ; 0 (0)        ; 0           ; 6            ; 0       ; 3         ; 0    ; 0            ; |top|core:core_inst|alu:alu_inst|mult:mult_inst|lpm_mult:lpm_mult_component|mult_m8n:auto_generated             ; work         ;
 ;       |regfile:regfile_inst|                 ; 308 (308)         ; 256 (256)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|core:core_inst|regfile:regfile_inst                                                                        ; work         ;
-;    |gpu_core:gpu_core_inst|                  ; 119 (36)          ; 37 (16)      ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|gpu_core:gpu_core_inst                                                                                     ; work         ;
+;    |gpu_core:gpu_core_inst|                  ; 118 (36)          ; 37 (16)      ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|gpu_core:gpu_core_inst                                                                                     ; work         ;
 ;       |gpu_ram:gpu_ram_inst|                 ; 0 (0)             ; 0 (0)        ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|gpu_core:gpu_core_inst|gpu_ram:gpu_ram_inst                                                                ; work         ;
 ;          |altsyncram:altsyncram_component|   ; 0 (0)             ; 0 (0)        ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|gpu_core:gpu_core_inst|gpu_ram:gpu_ram_inst|altsyncram:altsyncram_component                                ; work         ;
 ;             |altsyncram_aaf2:auto_generated| ; 0 (0)             ; 0 (0)        ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|gpu_core:gpu_core_inst|gpu_ram:gpu_ram_inst|altsyncram:altsyncram_component|altsyncram_aaf2:auto_generated ; work         ;
 ;       |pll:pll_inst|                         ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|gpu_core:gpu_core_inst|pll:pll_inst                                                                        ; work         ;
 ;          |altpll:altpll_component|           ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|gpu_core:gpu_core_inst|pll:pll_inst|altpll:altpll_component                                                ; work         ;
 ;             |pll_altpll:auto_generated|      ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|gpu_core:gpu_core_inst|pll:pll_inst|altpll:altpll_component|pll_altpll:auto_generated                      ; work         ;
-;       |vga_sync:vga_sync_inst|               ; 83 (83)           ; 21 (21)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|gpu_core:gpu_core_inst|vga_sync:vga_sync_inst                                                              ; work         ;
+;       |vga_sync:vga_sync_inst|               ; 82 (82)           ; 21 (21)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|gpu_core:gpu_core_inst|vga_sync:vga_sync_inst                                                              ; work         ;
 ;    |mem_selector:mem_selector_inst|          ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|mem_selector:mem_selector_inst                                                                             ; work         ;
 ;    |ram:ram_inst|                            ; 0 (0)             ; 0 (0)        ; 65536       ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|ram:ram_inst                                                                                               ; work         ;
 ;       |altsyncram:altsyncram_component|      ; 0 (0)             ; 0 (0)        ; 65536       ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|ram:ram_inst|altsyncram:altsyncram_component                                                               ; work         ;
@@ -380,8 +380,8 @@ Note: number of Embedded Multiplier Blocks used is only available after a succes
 ; gpu_core:gpu_core_inst|vga_sync:vga_sync_inst|v_cnt[6] ; 3       ;
 ; gpu_core:gpu_core_inst|vga_sync:vga_sync_inst|v_cnt[7] ; 3       ;
 ; gpu_core:gpu_core_inst|vga_sync:vga_sync_inst|v_cnt[8] ; 3       ;
-; core:core_inst|cpu_state[8]                            ; 89      ;
-; core:core_inst|stat[0]                                 ; 16      ;
+; core:core_inst|cpu_state[8]                            ; 88      ;
+; core:core_inst|stat[0]                                 ; 15      ;
 ; core:core_inst|sp[0]                                   ; 10      ;
 ; core:core_inst|sp[1]                                   ; 4       ;
 ; core:core_inst|sp[2]                                   ; 4       ;
@@ -403,7 +403,7 @@ Note: number of Embedded Multiplier Blocks used is only available after a succes
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
 ; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |top|segment_led:segment_led0|DS_A             ;
 ; 7:1                ; 32 bits   ; 128 LEs       ; 32 LEs               ; 96 LEs                 ; Yes        ; |top|core:core_inst|tcnt[27]                   ;
-; 30:1               ; 4 bits    ; 80 LEs        ; 8 LEs                ; 72 LEs                 ; Yes        ; |top|core:core_inst|RAM_DATA[15]               ;
+; 30:1               ; 4 bits    ; 80 LEs        ; 8 LEs                ; 72 LEs                 ; Yes        ; |top|core:core_inst|RAM_DATA[12]               ;
 ; 30:1               ; 12 bits   ; 240 LEs       ; 24 LEs               ; 216 LEs                ; Yes        ; |top|core:core_inst|RAM_DATA[2]                ;
 ; 178:1              ; 3 bits    ; 354 LEs       ; 87 LEs               ; 267 LEs                ; Yes        ; |top|core:core_inst|cpu_state[3]               ;
 ; 180:1              ; 2 bits    ; 240 LEs       ; 46 LEs               ; 194 LEs                ; Yes        ; |top|core:core_inst|cpu_state[1]               ;
@@ -1123,23 +1123,23 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     ENA SLD           ; 39                          ;
 ;     SLD               ; 32                          ;
 ;     plain             ; 85                          ;
-; cycloneiii_lcell_comb ; 2470                        ;
+; cycloneiii_lcell_comb ; 2463                        ;
 ;     arith             ; 245                         ;
 ;         2 data inputs ; 150                         ;
 ;         3 data inputs ; 95                          ;
-;     normal            ; 2225                        ;
+;     normal            ; 2218                        ;
 ;         0 data inputs ; 2                           ;
 ;         1 data inputs ; 24                          ;
 ;         2 data inputs ; 107                         ;
-;         3 data inputs ; 622                         ;
-;         4 data inputs ; 1470                        ;
+;         3 data inputs ; 624                         ;
+;         4 data inputs ; 1461                        ;
 ; cycloneiii_mac_mult   ; 3                           ;
 ; cycloneiii_mac_out    ; 3                           ;
 ; cycloneiii_pll        ; 1                           ;
 ; cycloneiii_ram_block  ; 32                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 21.00                       ;
-; Average LUT depth     ; 11.99                       ;
+; Average LUT depth     ; 12.14                       ;
 +-----------------------+-----------------------------+
 
 
@@ -1148,7 +1148,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:15     ;
+; Top            ; 00:00:14     ;
 +----------------+--------------+
 
 
@@ -1158,7 +1158,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 15.0.0 Build 145 04/22/2015 SJ Web Edition
-    Info: Processing started: Sun Feb 14 19:30:15 2016
+    Info: Processing started: Sun Feb 14 19:37:19 2016
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off cpu -c top
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 1 design units, including 1 entities, in source file pll.v
@@ -1341,18 +1341,18 @@ Info (286030): Timing-Driven Synthesis is running
 Info (144001): Generated suppressed messages file /home/vvvv/cpu2/verilog/cpu/top.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 2948 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 2941 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 5 input pins
     Info (21059): Implemented 29 output pins
-    Info (21061): Implemented 2875 logic cells
+    Info (21061): Implemented 2868 logic cells
     Info (21064): Implemented 32 RAM segments
     Info (21065): Implemented 1 PLLs
     Info (21062): Implemented 6 DSP elements
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 13 warnings
-    Info: Peak virtual memory: 1179 megabytes
-    Info: Processing ended: Sun Feb 14 19:30:45 2016
-    Info: Elapsed time: 00:00:30
-    Info: Total CPU time (on all processors): 00:00:46
+    Info: Peak virtual memory: 1181 megabytes
+    Info: Processing ended: Sun Feb 14 19:37:48 2016
+    Info: Elapsed time: 00:00:29
+    Info: Total CPU time (on all processors): 00:00:48
 
 
 +------------------------------------------+

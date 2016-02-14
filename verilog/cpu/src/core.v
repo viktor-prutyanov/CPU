@@ -198,7 +198,7 @@ always @(posedge CLK) begin
                                     5'b11000: begin //LDRAML
                                         mem_to_reg_l <= 1'b1;
                                         mem_to_reg_wa <= reg_wa;
-    
+                                        MEM_SELECT <= reg_out0[16];
                                         cpu_state <= 9'b0_00001_000;
                                         ip = inc_ip;
                                         RAM_ADDR = reg_out0[11:0];
@@ -206,7 +206,7 @@ always @(posedge CLK) begin
                                     5'b11001: begin //LDRAMH
                                         mem_to_reg_h <= 1'b1;
                                         mem_to_reg_wa <= reg_wa;
-    
+                                        MEM_SELECT <= reg_out0[16];
                                         cpu_state <= 9'b0_00001_001;
                                         ip = inc_ip;
                                         RAM_ADDR = reg_out0[11:0];
@@ -442,12 +442,14 @@ always @(posedge CLK) begin
 /*LDOL*/9'b0_00001_000: begin
 /*POPL*/    reg_in[15:0] <= RAM_Q;
 /*MOVL*/    cpu_state <= 9'b0_00001_011;
-/*MOVD*/    RAM_ADDR = ip;
+/*MOVD*/    RAM_ADDR = ip;  
+            MEM_SELECT <= 1'b0;
         end
 /*LDOH*/9'b0_00001_001: begin
 /*POPH*/    reg_in[31:16] <= RAM_Q;
 /*MOVH*/    cpu_state <= 9'b0_00001_011;
             RAM_ADDR = ip;
+            MEM_SELECT <= 1'b0;
         end
 /*RET*/ 9'b0_00001_010: begin
             cpu_state <= 9'b0_00001_011;

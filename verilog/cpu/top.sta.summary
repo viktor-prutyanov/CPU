@@ -3,27 +3,27 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'gpu_core_inst|pll_inst|altpll_component|auto_generated|pll1|clk[0]'
-Slack : -9.428
-TNS   : -133.688
+Slack : -9.050
+TNS   : -132.001
 
 Type  : Slow 1200mV 85C Model Setup 'CLK'
-Slack : -8.079
-TNS   : -374.957
+Slack : -8.970
+TNS   : -408.740
 
 Type  : Slow 1200mV 85C Model Setup 'gpu_core:gpu_core_inst|vga_sync:vga_sync_inst|H_SYNC'
-Slack : -3.601
-TNS   : -31.952
+Slack : -3.059
+TNS   : -25.802
 
 Type  : Slow 1200mV 85C Model Hold 'gpu_core_inst|pll_inst|altpll_component|auto_generated|pll1|clk[0]'
-Slack : -0.227
-TNS   : -0.227
+Slack : -0.220
+TNS   : -0.220
 
 Type  : Slow 1200mV 85C Model Hold 'CLK'
 Slack : 0.434
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'gpu_core:gpu_core_inst|vga_sync:vga_sync_inst|H_SYNC'
-Slack : 0.454
+Slack : 0.435
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'gpu_core:gpu_core_inst|vga_sync:vga_sync_inst|H_SYNC'
@@ -31,35 +31,35 @@ Slack : -1.487
 TNS   : -14.870
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLK'
-Slack : 10.104
+Slack : 10.098
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'gpu_core_inst|pll_inst|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 19.565
+Slack : 19.560
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Setup 'gpu_core_inst|pll_inst|altpll_component|auto_generated|pll1|clk[0]'
-Slack : -8.556
-TNS   : -121.980
+Slack : -8.302
+TNS   : -120.841
 
 Type  : Slow 1200mV 0C Model Setup 'CLK'
-Slack : -6.719
-TNS   : -309.200
+Slack : -7.642
+TNS   : -344.762
 
 Type  : Slow 1200mV 0C Model Setup 'gpu_core:gpu_core_inst|vga_sync:vga_sync_inst|H_SYNC'
-Slack : -3.232
-TNS   : -28.345
+Slack : -2.677
+TNS   : -22.658
 
 Type  : Slow 1200mV 0C Model Hold 'gpu_core_inst|pll_inst|altpll_component|auto_generated|pll1|clk[0]'
-Slack : -0.348
-TNS   : -0.348
+Slack : -0.338
+TNS   : -0.338
 
 Type  : Slow 1200mV 0C Model Hold 'CLK'
-Slack : 0.385
+Slack : 0.384
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'gpu_core:gpu_core_inst|vga_sync:vga_sync_inst|H_SYNC'
-Slack : 0.404
+Slack : 0.387
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'gpu_core:gpu_core_inst|vga_sync:vga_sync_inst|H_SYNC'
@@ -67,35 +67,35 @@ Slack : -1.487
 TNS   : -14.870
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLK'
-Slack : 10.130
+Slack : 10.124
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'gpu_core_inst|pll_inst|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 19.535
+Slack : 19.530
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Setup 'gpu_core_inst|pll_inst|altpll_component|auto_generated|pll1|clk[0]'
-Slack : -4.358
-TNS   : -62.670
+Slack : -4.134
+TNS   : -61.606
 
 Type  : Fast 1200mV 0C Model Setup 'gpu_core:gpu_core_inst|vga_sync:vga_sync_inst|H_SYNC'
-Slack : -0.974
-TNS   : -8.227
+Slack : -0.753
+TNS   : -5.494
 
 Type  : Fast 1200mV 0C Model Setup 'CLK'
-Slack : 1.886
+Slack : 1.612
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'gpu_core_inst|pll_inst|altpll_component|auto_generated|pll1|clk[0]'
-Slack : -0.054
-TNS   : -0.054
+Slack : -0.049
+TNS   : -0.049
+
+Type  : Fast 1200mV 0C Model Hold 'gpu_core:gpu_core_inst|vga_sync:vga_sync_inst|H_SYNC'
+Slack : 0.176
+TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'CLK'
 Slack : 0.179
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Hold 'gpu_core:gpu_core_inst|vga_sync:vga_sync_inst|H_SYNC'
-Slack : 0.184
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'gpu_core:gpu_core_inst|vga_sync:vga_sync_inst|H_SYNC'
