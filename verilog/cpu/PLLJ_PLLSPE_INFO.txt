@@ -1,0 +1,5 @@
+PLL_Name	gpu_core:gpu_core_inst|pll:pll_inst|altpll:altpll_component|pll_altpll:auto_generated|pll1
+PLLJITTER	NA
+PLLSPEmax	84
+PLLSPEmin	-53
+
