@@ -13,7 +13,7 @@ module top
     output [4:0]V_B
 );
 
-wire [31:0]keys = {28'b0, KEY4, KEY1, KEY2, KEY3};
+wire [31:0]keys = {28'b0, ~KEY4, ~KEY1, ~KEY2, ~KEY3};
 
 wire [15:0]num_l;
 segment_led segment_led0(
