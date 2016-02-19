@@ -56,7 +56,7 @@ int main(int argc, char *argv[])
         return EXIT_FAILURE;
     }
 
-    tokenList.Make() ? printf("Assemblied successfully.\n") : printf("Assembly failed.\n");
+    tokenList.Make() ? printf("\x1b[32mAssemblied successfully.\x1b[0m\n") : printf("\x1b[31mAssembly failed.\x1b[0m\n");
     printf("Size of Intel hex file is %lu bytes.\n", tokenList.MakeHex(hexFile));
     size_t binFileSize = tokenList.MakeBin(binFile);
     float percentFilled = binFileSize * 100.0 / FLASH_SIZE;
