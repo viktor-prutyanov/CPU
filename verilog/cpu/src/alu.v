@@ -45,8 +45,8 @@ mult mult_inst(
 
 wire [31:0]add_ans = ARG0 + ARG1;
 wire [31:0]sub_ans = ARG0 - ARG1;
-wire [31:0]sal_ans = ARG0 <<< reduced_abs_arg1;
-wire [31:0]sar_ans = ARG0 >>> reduced_abs_arg1;
+wire [31:0]sal_ans = ARG0 << reduced_abs_arg1;
+wire [31:0]sar_ans = ARG0 >> reduced_abs_arg1;
 wire [31:0]rol_ans = (ARG0 << reduced_abs_arg1) | (ARG0 >> reduced_neg_abs_arg1);
 wire [31:0]ror_ans = (ARG0 >> reduced_abs_arg1) | (ARG0 << reduced_neg_abs_arg1);
 wire [31:0]and_ans = ARG0 & ARG1;

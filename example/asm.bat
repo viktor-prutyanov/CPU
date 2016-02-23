@@ -1,1 +1,0 @@
-cpp\Assembler\x64\Release\Assembler.exe prog.asm prog.bin prog.hex

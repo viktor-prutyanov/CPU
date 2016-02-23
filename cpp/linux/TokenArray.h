@@ -280,7 +280,7 @@ bool TokenArray::Make()
         	case Instruction::Add:  REG3(ADD); break;
             case Instruction::Sub:  REG3(SUB); break;
             case Instruction::Mul:  REG3(MUL); break;
-            case Instruction::Sa:   REG3(SA);  break;
+            case Instruction::Sh:   REG3(SH);  break;
             case Instruction::And:  REG3(AND); break;
             case Instruction::Or:   REG3(OR);  break;
             case Instruction::Xor:  REG3(XOR); break;
@@ -302,8 +302,8 @@ bool TokenArray::Make()
         	case Instruction::Subb:  REG_NUM(SUBB);  break;
             case Instruction::Mulb:  REG_NUM(MULB);  break;
 
-            case Instruction::Sal:  REG_NUM(SAL); break;
-            case Instruction::Sar:  REG_NUM(SAR); break;
+            case Instruction::Shl:  REG_NUM(SHL); break;
+            case Instruction::Shr:  REG_NUM(SHR); break;
             case Instruction::Rol:  REG_NUM(ROL); break;
             case Instruction::Ror:  REG_NUM(ROR); break;
 

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for top
-Mon Feb 15 14:25:23 2016
+Tue Feb 23 15:34:26 2016
 Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 SJ Web Edition
 
 
@@ -33,10 +33,11 @@ Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 SJ Web Edition
  25. Port Connectivity Checks: "gpu_core:gpu_core_inst|gpu_ram:gpu_ram_inst"
  26. Port Connectivity Checks: "core:core_inst|alu:alu_inst|mult:mult_inst"
  27. Port Connectivity Checks: "core:core_inst"
- 28. Post-Synthesis Netlist Statistics for Top Partition
- 29. Elapsed Time Per Partition
- 30. Analysis & Synthesis Messages
- 31. Analysis & Synthesis Suppressed Messages
+ 28. Port Connectivity Checks: "lfsr16:lfsr16_inst"
+ 29. Post-Synthesis Netlist Statistics for Top Partition
+ 30. Elapsed Time Per Partition
+ 31. Analysis & Synthesis Messages
+ 32. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -63,15 +64,15 @@ agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Feb 15 14:25:23 2016      ;
+; Analysis & Synthesis Status        ; Successful - Tue Feb 23 15:34:26 2016      ;
 ; Quartus II 64-Bit Version          ; 15.0.0 Build 145 04/22/2015 SJ Web Edition ;
 ; Revision Name                      ; top                                        ;
 ; Top-level Entity Name              ; top                                        ;
 ; Family                             ; Cyclone IV E                               ;
-; Total logic elements               ; 2,798                                      ;
-;     Total combinational functions  ; 2,461                                      ;
-;     Dedicated logic registers      ; 537                                        ;
-; Total registers                    ; 537                                        ;
+; Total logic elements               ; 2,886                                      ;
+;     Total combinational functions  ; 2,549                                      ;
+;     Dedicated logic registers      ; 553                                        ;
+; Total registers                    ; 553                                        ;
 ; Total pins                         ; 34                                         ;
 ; Total virtual pins                 ; 0                                          ;
 ; Total memory bits                  ; 73,728                                     ;
@@ -184,6 +185,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------------+-----------------+----------------------------------------+------------------------------------------------------------------------------+---------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                 ; Library ;
 +----------------------------------+-----------------+----------------------------------------+------------------------------------------------------------------------------+---------+
+; src/rnd_cell.v                   ; yes             ; User Verilog HDL File                  ; /home/vvvv/cpu2/verilog/cpu/src/rnd_cell.v                                   ;         ;
+; src/lfsr16.v                     ; yes             ; User Verilog HDL File                  ; /home/vvvv/cpu2/verilog/cpu/src/lfsr16.v                                     ;         ;
 ; pll.v                            ; yes             ; User Wizard-Generated File             ; /home/vvvv/cpu2/verilog/cpu/pll.v                                            ;         ;
 ; gpu_ram.v                        ; yes             ; User Wizard-Generated File             ; /home/vvvv/cpu2/verilog/cpu/gpu_ram.v                                        ;         ;
 ; src/gpu_core.v                   ; yes             ; User Verilog HDL File                  ; /home/vvvv/cpu2/verilog/cpu/src/gpu_core.v                                   ;         ;
@@ -227,20 +230,20 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 2,798     ;
+; Estimated Total logic elements              ; 2,886     ;
 ;                                             ;           ;
-; Total combinational functions               ; 2461      ;
+; Total combinational functions               ; 2549      ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 1461      ;
-;     -- 3 input functions                    ; 719       ;
-;     -- <=2 input functions                  ; 281       ;
+;     -- 4 input functions                    ; 1508      ;
+;     -- 3 input functions                    ; 727       ;
+;     -- <=2 input functions                  ; 314       ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 2216      ;
-;     -- arithmetic mode                      ; 245       ;
+;     -- normal mode                          ; 2295      ;
+;     -- arithmetic mode                      ; 254       ;
 ;                                             ;           ;
-; Total registers                             ; 537       ;
-;     -- Dedicated logic registers            ; 537       ;
+; Total registers                             ; 553       ;
+;     -- Dedicated logic registers            ; 553       ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
 ; I/O pins                                    ; 34        ;
@@ -252,9 +255,9 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;     -- PLLs                                 ; 1         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; CLK~input ;
-; Maximum fan-out                             ; 533       ;
-; Total fan-out                               ; 10995     ;
-; Average fan-out                             ; 3.54      ;
+; Maximum fan-out                             ; 549       ;
+; Total fan-out                               ; 11277     ;
+; Average fan-out                             ; 3.51      ;
 +---------------------------------------------+-----------+
 
 
@@ -263,25 +266,27 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                   ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                             ; Library Name ;
 +----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------+--------------+
-; |top                                         ; 2461 (1)          ; 537 (0)      ; 73728       ; 6            ; 0       ; 3         ; 34   ; 0            ; |top                                                                                                            ; work         ;
-;    |core:core_inst|                          ; 2264 (1119)       ; 471 (215)    ; 0           ; 6            ; 0       ; 3         ; 0    ; 0            ; |top|core:core_inst                                                                                             ; work         ;
-;       |alu:alu_inst|                         ; 837 (809)         ; 0 (0)        ; 0           ; 6            ; 0       ; 3         ; 0    ; 0            ; |top|core:core_inst|alu:alu_inst                                                                                ; work         ;
+; |top                                         ; 2549 (1)          ; 553 (0)      ; 73728       ; 6            ; 0       ; 3         ; 34   ; 0            ; |top                                                                                                            ; work         ;
+;    |core:core_inst|                          ; 2319 (1136)       ; 471 (215)    ; 0           ; 6            ; 0       ; 3         ; 0    ; 0            ; |top|core:core_inst                                                                                             ; work         ;
+;       |alu:alu_inst|                         ; 875 (847)         ; 0 (0)        ; 0           ; 6            ; 0       ; 3         ; 0    ; 0            ; |top|core:core_inst|alu:alu_inst                                                                                ; work         ;
 ;          |mult:mult_inst|                    ; 28 (0)            ; 0 (0)        ; 0           ; 6            ; 0       ; 3         ; 0    ; 0            ; |top|core:core_inst|alu:alu_inst|mult:mult_inst                                                                 ; work         ;
 ;             |lpm_mult:lpm_mult_component|    ; 28 (0)            ; 0 (0)        ; 0           ; 6            ; 0       ; 3         ; 0    ; 0            ; |top|core:core_inst|alu:alu_inst|mult:mult_inst|lpm_mult:lpm_mult_component                                     ; work         ;
 ;                |mult_m8n:auto_generated|     ; 28 (28)           ; 0 (0)        ; 0           ; 6            ; 0       ; 3         ; 0    ; 0            ; |top|core:core_inst|alu:alu_inst|mult:mult_inst|lpm_mult:lpm_mult_component|mult_m8n:auto_generated             ; work         ;
 ;       |regfile:regfile_inst|                 ; 308 (308)         ; 256 (256)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|core:core_inst|regfile:regfile_inst                                                                        ; work         ;
-;    |gpu_core:gpu_core_inst|                  ; 118 (36)          ; 37 (16)      ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|gpu_core:gpu_core_inst                                                                                     ; work         ;
+;    |gpu_core:gpu_core_inst|                  ; 120 (39)          ; 37 (16)      ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|gpu_core:gpu_core_inst                                                                                     ; work         ;
 ;       |gpu_ram:gpu_ram_inst|                 ; 0 (0)             ; 0 (0)        ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|gpu_core:gpu_core_inst|gpu_ram:gpu_ram_inst                                                                ; work         ;
 ;          |altsyncram:altsyncram_component|   ; 0 (0)             ; 0 (0)        ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|gpu_core:gpu_core_inst|gpu_ram:gpu_ram_inst|altsyncram:altsyncram_component                                ; work         ;
 ;             |altsyncram_aaf2:auto_generated| ; 0 (0)             ; 0 (0)        ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|gpu_core:gpu_core_inst|gpu_ram:gpu_ram_inst|altsyncram:altsyncram_component|altsyncram_aaf2:auto_generated ; work         ;
 ;       |pll:pll_inst|                         ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|gpu_core:gpu_core_inst|pll:pll_inst                                                                        ; work         ;
 ;          |altpll:altpll_component|           ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|gpu_core:gpu_core_inst|pll:pll_inst|altpll:altpll_component                                                ; work         ;
 ;             |pll_altpll:auto_generated|      ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|gpu_core:gpu_core_inst|pll:pll_inst|altpll:altpll_component|pll_altpll:auto_generated                      ; work         ;
-;       |vga_sync:vga_sync_inst|               ; 82 (82)           ; 21 (21)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|gpu_core:gpu_core_inst|vga_sync:vga_sync_inst                                                              ; work         ;
-;    |mem_selector:mem_selector_inst|          ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|mem_selector:mem_selector_inst                                                                             ; work         ;
+;       |vga_sync:vga_sync_inst|               ; 81 (81)           ; 21 (21)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|gpu_core:gpu_core_inst|vga_sync:vga_sync_inst                                                              ; work         ;
+;    |lfsr16:lfsr16_inst|                      ; 10 (10)           ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|lfsr16:lfsr16_inst                                                                                         ; work         ;
+;    |mem_selector:mem_selector_inst|          ; 11 (11)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|mem_selector:mem_selector_inst                                                                             ; work         ;
 ;    |ram:ram_inst|                            ; 0 (0)             ; 0 (0)        ; 65536       ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|ram:ram_inst                                                                                               ; work         ;
 ;       |altsyncram:altsyncram_component|      ; 0 (0)             ; 0 (0)        ; 65536       ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|ram:ram_inst|altsyncram:altsyncram_component                                                               ; work         ;
 ;          |altsyncram_3al1:auto_generated|    ; 0 (0)             ; 0 (0)        ; 65536       ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|ram:ram_inst|altsyncram:altsyncram_component|altsyncram_3al1:auto_generated                                ; work         ;
+;    |rnd_cell:rnd_cell_inst|                  ; 12 (12)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|rnd_cell:rnd_cell_inst                                                                                     ; work         ;
 ;    |segment_led:segment_led0|                ; 76 (76)           ; 29 (29)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|segment_led:segment_led0                                                                                   ; work         ;
 +----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
@@ -332,10 +337,10 @@ Note: number of Embedded Multiplier Blocks used is only available after a succes
 +---------------------------------------+-----------------------------------------+
 ; Register name                         ; Reason for Removal                      ;
 +---------------------------------------+-----------------------------------------+
-; core:core_inst|iwrk[0,3..7]           ; Stuck at GND due to stuck port data_in  ;
+; core:core_inst|iwrk[0]                ; Stuck at GND due to stuck port data_in  ;
 ; core:core_inst|cpu_state[6,7]         ; Merged with core:core_inst|cpu_state[5] ;
 ; core:core_inst|cpu_state[5]           ; Stuck at GND due to stuck port data_in  ;
-; Total Number of Removed Registers = 9 ;                                         ;
+; Total Number of Removed Registers = 4 ;                                         ;
 +---------------------------------------+-----------------------------------------+
 
 
@@ -344,12 +349,12 @@ Note: number of Embedded Multiplier Blocks used is only available after a succes
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 537   ;
-; Number of registers using Synchronous Clear  ; 18    ;
-; Number of registers using Synchronous Load   ; 85    ;
+; Total registers                              ; 553   ;
+; Number of registers using Synchronous Clear  ; 8     ;
+; Number of registers using Synchronous Load   ; 81    ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 420   ;
+; Number of registers using Clock Enable       ; 418   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -380,8 +385,8 @@ Note: number of Embedded Multiplier Blocks used is only available after a succes
 ; gpu_core:gpu_core_inst|vga_sync:vga_sync_inst|v_cnt[6] ; 3       ;
 ; gpu_core:gpu_core_inst|vga_sync:vga_sync_inst|v_cnt[7] ; 3       ;
 ; gpu_core:gpu_core_inst|vga_sync:vga_sync_inst|v_cnt[8] ; 3       ;
-; core:core_inst|cpu_state[8]                            ; 88      ;
-; core:core_inst|stat[0]                                 ; 15      ;
+; core:core_inst|cpu_state[8]                            ; 85      ;
+; core:core_inst|stat[0]                                 ; 13      ;
 ; core:core_inst|sp[0]                                   ; 10      ;
 ; core:core_inst|sp[1]                                   ; 4       ;
 ; core:core_inst|sp[2]                                   ; 4       ;
@@ -391,8 +396,21 @@ Note: number of Embedded Multiplier Blocks used is only available after a succes
 ; core:core_inst|sp[6]                                   ; 4       ;
 ; core:core_inst|sp[7]                                   ; 4       ;
 ; core:core_inst|sp[8]                                   ; 4       ;
+; lfsr16:lfsr16_inst|Q[9]                                ; 6       ;
+; lfsr16:lfsr16_inst|Q[10]                               ; 5       ;
+; lfsr16:lfsr16_inst|Q[7]                                ; 4       ;
+; lfsr16:lfsr16_inst|Q[6]                                ; 4       ;
+; lfsr16:lfsr16_inst|Q[5]                                ; 4       ;
+; lfsr16:lfsr16_inst|Q[3]                                ; 5       ;
+; lfsr16:lfsr16_inst|Q[2]                                ; 5       ;
+; lfsr16:lfsr16_inst|Q[1]                                ; 5       ;
+; lfsr16:lfsr16_inst|Q[0]                                ; 3       ;
 ; core:core_inst|sp[9]                                   ; 4       ;
-; Total number of inverted registers = 33                ;         ;
+; lfsr16:lfsr16_inst|Q[11]                               ; 1       ;
+; lfsr16:lfsr16_inst|Q[12]                               ; 2       ;
+; lfsr16:lfsr16_inst|Q[13]                               ; 1       ;
+; lfsr16:lfsr16_inst|Q[15]                               ; 2       ;
+; Total number of inverted registers = 46                ;         ;
 +--------------------------------------------------------+---------+
 
 
@@ -401,44 +419,42 @@ Note: number of Embedded Multiplier Blocks used is only available after a succes
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                     ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
-; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |top|segment_led:segment_led0|DS_A             ;
-; 7:1                ; 32 bits   ; 128 LEs       ; 32 LEs               ; 96 LEs                 ; Yes        ; |top|core:core_inst|tcnt[27]                   ;
-; 30:1               ; 4 bits    ; 80 LEs        ; 8 LEs                ; 72 LEs                 ; Yes        ; |top|core:core_inst|RAM_DATA[12]               ;
-; 30:1               ; 12 bits   ; 240 LEs       ; 24 LEs               ; 216 LEs                ; Yes        ; |top|core:core_inst|RAM_DATA[2]                ;
-; 178:1              ; 3 bits    ; 354 LEs       ; 87 LEs               ; 267 LEs                ; Yes        ; |top|core:core_inst|cpu_state[3]               ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |top|segment_led:segment_led0|DS_B             ;
+; 7:1                ; 32 bits   ; 128 LEs       ; 32 LEs               ; 96 LEs                 ; Yes        ; |top|core:core_inst|tcnt[1]                    ;
+; 30:1               ; 4 bits    ; 80 LEs        ; 8 LEs                ; 72 LEs                 ; Yes        ; |top|core:core_inst|RAM_DATA[13]               ;
+; 30:1               ; 12 bits   ; 240 LEs       ; 24 LEs               ; 216 LEs                ; Yes        ; |top|core:core_inst|RAM_DATA[9]                ;
+; 178:1              ; 3 bits    ; 354 LEs       ; 87 LEs               ; 267 LEs                ; Yes        ; |top|core:core_inst|cpu_state[0]               ;
 ; 180:1              ; 2 bits    ; 240 LEs       ; 46 LEs               ; 194 LEs                ; Yes        ; |top|core:core_inst|cpu_state[1]               ;
-; 114:1              ; 4 bits    ; 304 LEs       ; 24 LEs               ; 280 LEs                ; Yes        ; |top|core:core_inst|reg_in[5]                  ;
-; 114:1              ; 2 bits    ; 152 LEs       ; 12 LEs               ; 140 LEs                ; Yes        ; |top|core:core_inst|reg_in[2]                  ;
+; 114:1              ; 4 bits    ; 304 LEs       ; 24 LEs               ; 280 LEs                ; Yes        ; |top|core:core_inst|reg_in[7]                  ;
+; 114:1              ; 2 bits    ; 152 LEs       ; 12 LEs               ; 140 LEs                ; Yes        ; |top|core:core_inst|reg_in[1]                  ;
 ; 115:1              ; 3 bits    ; 228 LEs       ; 12 LEs               ; 216 LEs                ; Yes        ; |top|core:core_inst|reg_in[15]                 ;
 ; 99:1               ; 2 bits    ; 132 LEs       ; 12 LEs               ; 120 LEs                ; Yes        ; |top|core:core_inst|reg_in[11]                 ;
-; 99:1               ; 2 bits    ; 132 LEs       ; 10 LEs               ; 122 LEs                ; Yes        ; |top|core:core_inst|reg_in[9]                  ;
-; 65:1               ; 9 bits    ; 387 LEs       ; 63 LEs               ; 324 LEs                ; Yes        ; |top|core:core_inst|ip[7]                      ;
-; 65:1               ; 2 bits    ; 86 LEs        ; 14 LEs               ; 72 LEs                 ; Yes        ; |top|core:core_inst|ip[1]                      ;
-; 67:1               ; 2 bits    ; 88 LEs        ; 16 LEs               ; 72 LEs                 ; Yes        ; |top|core:core_inst|RAM_ADDR[10]               ;
-; 67:1               ; 7 bits    ; 308 LEs       ; 63 LEs               ; 245 LEs                ; Yes        ; |top|core:core_inst|RAM_ADDR[6]                ;
-; 67:1               ; 2 bits    ; 88 LEs        ; 18 LEs               ; 70 LEs                 ; Yes        ; |top|core:core_inst|RAM_ADDR[1]                ;
-; 136:1              ; 4 bits    ; 360 LEs       ; 48 LEs               ; 312 LEs                ; Yes        ; |top|core:core_inst|reg_in[29]                 ;
-; 136:1              ; 4 bits    ; 360 LEs       ; 48 LEs               ; 312 LEs                ; Yes        ; |top|core:core_inst|reg_in[24]                 ;
-; 136:1              ; 3 bits    ; 270 LEs       ; 36 LEs               ; 234 LEs                ; Yes        ; |top|core:core_inst|reg_in[21]                 ;
-; 122:1              ; 5 bits    ; 405 LEs       ; 60 LEs               ; 345 LEs                ; Yes        ; |top|core:core_inst|reg_in[20]                 ;
+; 99:1               ; 2 bits    ; 132 LEs       ; 10 LEs               ; 122 LEs                ; Yes        ; |top|core:core_inst|reg_in[8]                  ;
+; 65:1               ; 11 bits   ; 473 LEs       ; 66 LEs               ; 407 LEs                ; Yes        ; |top|core:core_inst|ip[1]                      ;
+; 69:1               ; 2 bits    ; 92 LEs        ; 16 LEs               ; 76 LEs                 ; Yes        ; |top|core:core_inst|RAM_ADDR[10]               ;
+; 69:1               ; 9 bits    ; 414 LEs       ; 90 LEs               ; 324 LEs                ; Yes        ; |top|core:core_inst|RAM_ADDR[9]                ;
+; 136:1              ; 3 bits    ; 270 LEs       ; 36 LEs               ; 234 LEs                ; Yes        ; |top|core:core_inst|reg_in[31]                 ;
+; 136:1              ; 2 bits    ; 180 LEs       ; 24 LEs               ; 156 LEs                ; Yes        ; |top|core:core_inst|reg_in[23]                 ;
+; 137:1              ; 4 bits    ; 364 LEs       ; 52 LEs               ; 312 LEs                ; Yes        ; |top|core:core_inst|reg_in[24]                 ;
+; 123:1              ; 5 bits    ; 410 LEs       ; 65 LEs               ; 345 LEs                ; Yes        ; |top|core:core_inst|reg_in[17]                 ;
 ; 27:1               ; 9 bits    ; 162 LEs       ; 18 LEs               ; 144 LEs                ; Yes        ; |top|core:core_inst|sp[9]                      ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |top|gpu_core:gpu_core_inst|Mux1               ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |top|gpu_core:gpu_core_inst|Mux2               ;
 ; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |top|core:core_inst|reg_ra0[0]                 ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |top|core:core_inst|alu_arg1[7]                ;
-; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |top|core:core_inst|alu_arg1[4]                ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |top|core:core_inst|alu_arg1[5]                ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |top|core:core_inst|alu_arg1[0]                ;
 ; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |top|core:core_inst|alu:alu_inst|ShiftLeft0    ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |top|core:core_inst|alu:alu_inst|ShiftRight0   ;
-; 8:1                ; 32 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; No         ; |top|core:core_inst|regfile:regfile_inst|Mux57 ;
-; 8:1                ; 32 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; No         ; |top|core:core_inst|regfile:regfile_inst|Mux20 ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |top|core:core_inst|alu:alu_inst|ShiftLeft1    ;
+; 8:1                ; 32 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; No         ; |top|core:core_inst|regfile:regfile_inst|Mux55 ;
+; 8:1                ; 32 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; No         ; |top|core:core_inst|regfile:regfile_inst|Mux28 ;
 ; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |top|core:core_inst|alu:alu_inst|ShiftLeft0    ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |top|core:core_inst|alu:alu_inst|ShiftLeft1    ;
-; 4:1                ; 12 bits   ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; No         ; |top|core:core_inst|Mux158                     ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |top|core:core_inst|alu:alu_inst|ShiftRight0   ;
+; 4:1                ; 12 bits   ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; No         ; |top|core:core_inst|Mux176                     ;
 ; 5:1                ; 4 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |top|core:core_inst|alu:alu_inst|ShiftRight1   ;
-; 5:1                ; 4 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |top|core:core_inst|alu:alu_inst|ShiftLeft1    ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |top|core:core_inst|alu:alu_inst|ShiftRight0   ;
 ; 6:1                ; 4 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |top|core:core_inst|alu:alu_inst|ShiftRight1   ;
-; 6:1                ; 4 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |top|core:core_inst|alu:alu_inst|ShiftLeft1    ;
-; 7:1                ; 12 bits   ; 48 LEs        ; 12 LEs               ; 36 LEs                 ; No         ; |top|core:core_inst|Mux173                     ;
-; 30:1               ; 15 bits   ; 300 LEs       ; 120 LEs              ; 180 LEs                ; No         ; |top|core:core_inst|alu:alu_inst|ANS[1]        ;
+; 6:1                ; 4 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |top|core:core_inst|alu:alu_inst|ShiftRight0   ;
+; 7:1                ; 12 bits   ; 48 LEs        ; 12 LEs               ; 36 LEs                 ; No         ; |top|core:core_inst|Mux176                     ;
+; 30:1               ; 15 bits   ; 300 LEs       ; 120 LEs              ; 180 LEs                ; No         ; |top|core:core_inst|alu:alu_inst|ANS[7]        ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
 
 
@@ -1099,15 +1115,26 @@ Note: In order to hide this table in the UI and the text report file, please set
 +--------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "core:core_inst"                                                                                                                 ;
-+-----------+--------+----------+----------------------------------------------------------------------------------------------------------------------------+
-; Port      ; Type   ; Severity ; Details                                                                                                                    ;
-+-----------+--------+----------+----------------------------------------------------------------------------------------------------------------------------+
-; OUT       ; Output ; Warning  ; Output or bidir port (32 bits) is wider than the port expression (16 bits) it drives; bit(s) "OUT[31..16]" have no fanouts ;
-; IN[31..4] ; Input  ; Info     ; Stuck at GND                                                                                                               ;
-; STATE     ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                   ;
-+-----------+--------+----------+----------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "core:core_inst"                                                                                                                  ;
++------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                                                                                    ;
++------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------+
+; OUT        ; Output ; Warning  ; Output or bidir port (32 bits) is wider than the port expression (16 bits) it drives; bit(s) "OUT[31..16]" have no fanouts ;
+; IN[31..29] ; Input  ; Info     ; Stuck at GND                                                                                                               ;
+; IN[23..22] ; Input  ; Info     ; Stuck at GND                                                                                                               ;
+; IN[15..4]  ; Input  ; Info     ; Stuck at GND                                                                                                               ;
+; STATE      ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                   ;
++------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "lfsr16:lfsr16_inst"                                                                      ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; Q[15..11] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -1116,30 +1143,30 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 34                          ;
-; cycloneiii_ff         ; 537                         ;
-;     ENA               ; 363                         ;
+; cycloneiii_ff         ; 553                         ;
+;     ENA               ; 365                         ;
 ;     ENA SCLR          ; 4                           ;
-;     ENA SCLR SLD      ; 14                          ;
-;     ENA SLD           ; 39                          ;
+;     ENA SCLR SLD      ; 4                           ;
+;     ENA SLD           ; 45                          ;
 ;     SLD               ; 32                          ;
-;     plain             ; 85                          ;
-; cycloneiii_lcell_comb ; 2463                        ;
-;     arith             ; 245                         ;
-;         2 data inputs ; 150                         ;
+;     plain             ; 103                         ;
+; cycloneiii_lcell_comb ; 2551                        ;
+;     arith             ; 254                         ;
+;         2 data inputs ; 159                         ;
 ;         3 data inputs ; 95                          ;
-;     normal            ; 2218                        ;
+;     normal            ; 2297                        ;
 ;         0 data inputs ; 2                           ;
-;         1 data inputs ; 24                          ;
-;         2 data inputs ; 107                         ;
-;         3 data inputs ; 624                         ;
-;         4 data inputs ; 1461                        ;
+;         1 data inputs ; 32                          ;
+;         2 data inputs ; 123                         ;
+;         3 data inputs ; 632                         ;
+;         4 data inputs ; 1508                        ;
 ; cycloneiii_mac_mult   ; 3                           ;
 ; cycloneiii_mac_out    ; 3                           ;
 ; cycloneiii_pll        ; 1                           ;
 ; cycloneiii_ram_block  ; 32                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 21.00                       ;
-; Average LUT depth     ; 12.14                       ;
+; Max LUT depth         ; 22.00                       ;
+; Average LUT depth     ; 12.47                       ;
 +-----------------------+-----------------------------+
 
 
@@ -1158,9 +1185,13 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 15.0.0 Build 145 04/22/2015 SJ Web Edition
-    Info: Processing started: Mon Feb 15 14:24:53 2016
+    Info: Processing started: Tue Feb 23 15:33:57 2016
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off cpu -c top
 Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 1 design units, including 1 entities, in source file src/rnd_cell.v
+    Info (12023): Found entity 1: rnd_cell
+Info (12021): Found 1 design units, including 1 entities, in source file src/lfsr16.v
+    Info (12023): Found entity 1: lfsr16
 Info (12021): Found 1 design units, including 1 entities, in source file pll.v
     Info (12023): Found entity 1: pll
 Info (12021): Found 1 design units, including 1 entities, in source file gpu_ram.v
@@ -1187,6 +1218,10 @@ Info (12021): Found 1 design units, including 1 entities, in source file mult.v
     Info (12023): Found entity 1: mult
 Info (12127): Elaborating entity "top" for the top level hierarchy
 Info (12128): Elaborating entity "segment_led" for hierarchy "segment_led:segment_led0"
+Info (12128): Elaborating entity "lfsr16" for hierarchy "lfsr16:lfsr16_inst"
+Info (12128): Elaborating entity "rnd_cell" for hierarchy "rnd_cell:rnd_cell_inst"
+Warning (10230): Verilog HDL assignment warning at rnd_cell.v(7): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at rnd_cell.v(8): truncated value with size 32 to match size of target (5)
 Info (12128): Elaborating entity "ram" for hierarchy "ram:ram_inst"
 Info (12128): Elaborating entity "altsyncram" for hierarchy "ram:ram_inst|altsyncram:altsyncram_component"
 Info (12130): Elaborated megafunction instantiation "ram:ram_inst|altsyncram:altsyncram_component"
@@ -1210,7 +1245,7 @@ Info (12133): Instantiated megafunction "ram:ram_inst|altsyncram:altsyncram_comp
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_3al1.tdf
     Info (12023): Found entity 1: altsyncram_3al1
 Info (12128): Elaborating entity "altsyncram_3al1" for hierarchy "ram:ram_inst|altsyncram:altsyncram_component|altsyncram_3al1:auto_generated"
-Critical Warning (127005): Memory depth (4096) in the design file differs from memory depth (26) in the Memory Initialization File "/home/vvvv/cpu2/example/prog.hex" -- setting initial value for remaining addresses to 0
+Critical Warning (127005): Memory depth (4096) in the design file differs from memory depth (268) in the Memory Initialization File "/home/vvvv/cpu2/example/prog.hex" -- setting initial value for remaining addresses to 0
 Info (12128): Elaborating entity "core" for hierarchy "core:core_inst"
 Info (12128): Elaborating entity "regfile" for hierarchy "core:core_inst|regfile:regfile_inst"
 Info (12128): Elaborating entity "alu" for hierarchy "core:core_inst|alu:alu_inst"
@@ -1342,18 +1377,18 @@ Info (286030): Timing-Driven Synthesis is running
 Info (144001): Generated suppressed messages file /home/vvvv/cpu2/verilog/cpu/top.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 2941 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 3029 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 5 input pins
     Info (21059): Implemented 29 output pins
-    Info (21061): Implemented 2868 logic cells
+    Info (21061): Implemented 2956 logic cells
     Info (21064): Implemented 32 RAM segments
     Info (21065): Implemented 1 PLLs
     Info (21062): Implemented 6 DSP elements
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 14 warnings
-    Info: Peak virtual memory: 1180 megabytes
-    Info: Processing ended: Mon Feb 15 14:25:23 2016
-    Info: Elapsed time: 00:00:30
-    Info: Total CPU time (on all processors): 00:00:44
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 16 warnings
+    Info: Peak virtual memory: 1179 megabytes
+    Info: Processing ended: Tue Feb 23 15:34:26 2016
+    Info: Elapsed time: 00:00:29
+    Info: Total CPU time (on all processors): 00:00:49
 
 
 +------------------------------------------+

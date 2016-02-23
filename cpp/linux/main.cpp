@@ -3,7 +3,7 @@
 
 #include "TokenArray.h"
 
-#define FLASH_SIZE 256
+#define FLASH_SIZE 8096
 
 int main(int argc, char *argv[]) 
 {

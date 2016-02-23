@@ -13,14 +13,26 @@ module top
     output [4:0]V_B
 );
 
-wire [31:0]keys = {28'b0, ~KEY4, ~KEY1, ~KEY2, ~KEY3};
-
 wire [15:0]num_l;
 segment_led segment_led0(
     .CLK(CLK),
     .DS_EN1(DS_EN1), .DS_EN2(DS_EN2), .DS_EN3(DS_EN3), .DS_EN4(DS_EN4),
     .DS_A(DS_A), .DS_B(DS_B), .DS_C(DS_C), .DS_D(DS_D), .DS_E(DS_E), .DS_F(DS_F), .DS_G(DS_G),
     .NUM(num_l)
+);
+
+wire [15:0]lfsr16_q;
+lfsr16 lfsr16_inst(
+    .CLK(CLK),
+    .Q(lfsr16_q)
+);
+
+wire [5:0]rnd_x;
+wire [4:0]rnd_y;
+rnd_cell rnd_cell_inst(
+    .LFSR(lfsr16_q[10:0]),
+    .X(rnd_x),
+    .Y(rnd_y)
 );
 
 wire [11:0]ram_addr;
@@ -35,10 +47,11 @@ ram ram_inst(
     .q(ram1_q)
 );
 
+wire [31:0]in = {3'b0, rnd_y[4:0], 2'b0, rnd_x[5:0], 12'b0, ~KEY4, ~KEY1, ~KEY2, ~KEY3};
 core core_inst(
     .CLK(CLK),
     .OUT(num_l),
-    .IN(keys),
+    .IN(in),
 
     .RAM_ADDR(ram_addr),
     .RAM_WREN(ram_wren),

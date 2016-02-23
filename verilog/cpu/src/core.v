@@ -122,15 +122,18 @@ always @(posedge CLK) begin
                 stat[0] <= 1'b0;
                 iret_ip = ip;
                 cpu_state <= 9'b0_00001_010;
-                ip = iwrk[0] ? 12'h0 :
-                    (iwrk[1] ? 12'h1 :
-                    (iwrk[2] ? 12'h2 :
-                    (iwrk[3] ? 12'h3 :
-                    (iwrk[4] ? 12'h4 :
-                    (iwrk[5] ? 12'h5 :
-                    (iwrk[6] ? 12'h6 : 12'h7))))));
-                iwrk[ip] = 1'b0;
-                RAM_ADDR = ip;
+                if (iwrk[0]) begin
+                    RAM_ADDR = 12'h0;
+                    iwrk[0] = 1'b0;
+                end
+                else if (iwrk[1]) begin
+                    RAM_ADDR = 12'h1;
+                    iwrk[1] = 1'b0;
+                end
+                else if (iwrk[2]) begin
+                    RAM_ADDR = 12'h2;
+                    iwrk[2] = 1'b0;
+                end
             end
             else begin
                 case (ram_q_dff[15])

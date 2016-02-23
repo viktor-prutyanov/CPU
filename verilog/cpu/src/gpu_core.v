@@ -89,6 +89,7 @@ always @(posedge vga_clk) begin
     else begin
         case (color)
             4'b0000: RGB = 16'b11111_111111_11111;
+            4'b1010: RGB = 16'b00000_111111_00000;
             4'b1111: RGB = 16'b11111_000000_00000;
             default: RGB = 16'b00000_000000_11111;
         endcase

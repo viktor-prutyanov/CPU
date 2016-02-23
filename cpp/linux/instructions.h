@@ -36,7 +36,7 @@
 #define ADD(reg1,reg2,reg3) (0x0800 + (reg1 << 8) + (reg2 << 5) + (reg3 << 2))  /*WRR*/ //(0b00001rrrrrrrrr00)
 #define SUB(reg1,reg2,reg3) (0x0801 + (reg1 << 8) + (reg2 << 5) + (reg3 << 2))  /*WRR*/ //(0b00001rrrrrrrrr01)
 #define MUL(reg1,reg2,reg3) (0x0802 + (reg1 << 8) + (reg2 << 5) + (reg3 << 2))  /*WRR*/ //(0b00001rrrrrrrrr10)
-#define SA(reg1,reg2,reg3)  (0x0803 + (reg1 << 8) + (reg2 << 5) + (reg3 << 2))  /*WRR*/ //(0b00001rrrrrrrrr11)
+#define SH(reg1,reg2,reg3)  (0x0803 + (reg1 << 8) + (reg2 << 5) + (reg3 << 2))  /*WRR*/ //(0b00001rrrrrrrrr11)
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 #define AND(reg1,reg2,reg3) (0x1000 + (reg1 << 8) + (reg2 << 5) + (reg3 << 2))  /*WRR*/ //(0b00010rrrrrrrrr00)
 #define OR(reg1,reg2,reg3)  (0x1001 + (reg1 << 8) + (reg2 << 5) + (reg3 << 2))  /*WRR*/ //(0b00010rrrrrrrrr01)
@@ -55,8 +55,8 @@
 #define ADDB(reg1,num)	    (0x4000 + (reg1 << 8) + (uint8_t)num)               /*XZZ*/ //(0b01000rrriiiiiiii)
 #define SUBB(reg1,num)      (0x4800 + (reg1 << 8) + (uint8_t)num)               /*XZZ*/ //(0b01001rrriiiiiiii)
 #define MULB(reg1,num)      (0x5000 + (reg1 << 8) + (uint8_t)num)               /*XZZ*/ //(0b01010rrriiiiiiii)
-#define SAL(reg1,num)       (0x5800 + (reg1 << 8) + (((uint8_t)num & 31) << 3)) /*XZZ*/ //(0b01011rrriiiiif00) 
-#define SAR(reg1,num)	    (0x5801 + (reg1 << 8) + (((uint8_t)num & 31) << 3)) /*XZZ*/ //(0b01011rrriiiiif01)
+#define SHL(reg1,num)       (0x5800 + (reg1 << 8) + (((uint8_t)num & 31) << 3)) /*XZZ*/ //(0b01011rrriiiiif00) 
+#define SHR(reg1,num)	    (0x5801 + (reg1 << 8) + (((uint8_t)num & 31) << 3)) /*XZZ*/ //(0b01011rrriiiiif01)
 #define ROL(reg1,num)	    (0x5802 + (reg1 << 8) + (((uint8_t)num & 31) << 3)) /*XZZ*/ //(0b01011rrriiiiif10)
 #define ROR(reg1,num)	    (0x5803 + (reg1 << 8) + (((uint8_t)num & 31) << 3)) /*XZZ*/ //(0b01011rrriiiiif11)
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
